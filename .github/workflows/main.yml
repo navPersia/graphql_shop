@@ -1,0 +1,17 @@
+name: Build and deliver container
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: node 16 build, and deliver container
+    steps:
+      - name: Docker login
+        run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Docker Build
+        run: docker build -t ${{ secrets.DOCKER_USER }}/graphqlapi:latest .
+
+      - name: Upload container to Docker Hub with Push
+        run: docker push ${{ secrets.DOCKER_USER }}/graphqlapi:latest
