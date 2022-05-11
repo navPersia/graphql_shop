@@ -5,10 +5,16 @@ This is a simple GraphQL API
 <ol type = "1">
          <li>Pull image vanuit DockerHub:</li>
          <p>
-                  <code>docker pull navidradkusha/graphqlapi</code>
+                  <code>$ docker pull navidradkusha/graphqlapi</code>
          </p>
          <li>Run in background:</li>
+         <p>
+                  <code>$ docker run -p 8080:4000 -d  navidradkusha/graphqlapi</code>
+         </p>
          <li>Stop container:</li>
+         <p>
+                  <code>$ docker stop my_container</code>
+         </p>
 </ol>
 
 <img width="385" alt="image" src="https://user-images.githubusercontent.com/45106824/167745052-fc2f5378-724d-44a6-86cb-235df1c9fa3b.png">
